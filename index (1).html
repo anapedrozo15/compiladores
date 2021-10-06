@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="container" style="width: 25%;">
+        <h2>Registro de usuario</h2>
+        <br>
+        <form>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Usuario</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    required="true">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" name="pass" required="true">
+            </div>
+            <button type="submit" class="btn btn-primary" onclick="ValidadPass();">Registrar Usuario</button>
+        </form>
+    </div>
+
+    <script>
+        function ValidadPass() {
+            let dato = document.getElementsByName('pass')[0].value;
+            let resultado = /^[A-Z][0-9][0-9][0-9][a-z][a-z][a-z][.*+\-!¿¡?^${}()|[\]\\][.*+\-!¿¡?^${}()|[\]\\][.*+\-!¿¡?^${}()|[\]\\]$/.test(dato);
+            if (resultado) {
+                alert('Contraseña Correcta');    
+            }else{
+                alert('Contraseña incorrepta');
+            }
+            
+
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
